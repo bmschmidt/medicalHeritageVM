@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network "forwarded_port", guest: 8787, host: 8787
 
     # Web
-    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "forwarded_port", guest: 80, host: 8007
 
     # add dummy to avoid "Could not retrieve fact fqdn"
     config.vm.hostname = "vagrant.example.com"
@@ -30,7 +30,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         puppet.manifests_path = "puppet/manifests"
         puppet.manifest_file = "rstudio-server.pp"
         puppet.module_path = "puppet/modules"
-
     end
+
+    config.vm.provision "shell", inline: "/bin/bash /vagrant/FreshInstallationScript/no-input-needed.sh"
 
 end
