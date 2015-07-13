@@ -1,0 +1,3 @@
+[submodule "FreshInstallationScript"]
+	path = FreshInstallationScript
+	url = https://github.com/Bookworm-project/FreshInstallationScript.git
