@@ -16,6 +16,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # RStudio
     config.vm.network "forwarded_port", guest: 8787, host: 8787
 
+    # Web
+    config.vm.network "forwarded_port", guest: 80, host: 8080
+
     # add dummy to avoid "Could not retrieve fact fqdn"
     config.vm.hostname = "vagrant.example.com"
 

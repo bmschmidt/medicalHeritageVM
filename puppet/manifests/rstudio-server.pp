@@ -3,8 +3,6 @@ include wget
 $rstudioserver = 'rstudio-server-0.98.1091-amd64.deb'
 $urlrstudio = 'http://download2.rstudio.org/'
 
-# $texpkgs = 'hyperref ifxetex ifluatex fixltx2e listings fancyvrb longtable booktabs ulem framed'
-
 # Update system for r install
 class update_system {   
     exec { 'apt_update':
@@ -26,15 +24,15 @@ class update_system {
     exec { 'add-cran-repository':
       provider => shell,
       command  =>
-'add-apt-repository "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/";
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9;
-apt-get update;',
+      'add-apt-repository "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/";
+      apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9;
+      apt-get update;',
     }
     -> 
     exec { 'upgrade-system':
         provider => shell,
         timeout => 2000, # On slow machines, this needs some time
-        command  =>'apt-get -y upgrade;apt-get -y autoremove;',
+        command  =>'apt-get -y upgrade; apt-get -y autoremove;',
     }
     ->
     # Install host additions
@@ -44,6 +42,7 @@ apt-get update;',
         ensure => present,
     }    
 }
+
 
 # Install r base and packages
 class install_r {
