@@ -1,7 +1,11 @@
+
+
 This provides a self-contained virtual environment for deploying a Bookworm server hosting a MySQL database, the Bookworm API over a LAMP stack, and a set of websites for exploration
 including a version of the RStudio server.
 
-The base installation has been forked from Andrew Goldstone's [Course materials for Literary Data](https://github.com/agoldst/litdata-vagrant); some of the text in this README is his.
+The base installation has been forked from Andrew Goldstone's [Course materials for Literary Data](https://github.com/agoldst/litdata-vagrant); most of the text of the README that follows is a modified version of the README from his course.
+
+
 
 # Installation
 
