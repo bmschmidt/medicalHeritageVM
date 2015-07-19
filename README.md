@@ -18,12 +18,15 @@ Requirements: this is meant to run on almost any system. However, you will need 
 5. Enter the command: `vagrant box add ubuntu/trusty64` and press Return. 
 6. Enter the command: `vagrant up` and press Return. Now begins a long process of downloading and installing software. This will require a large amount of disk space and time to complete. You will know it is finished when you get a new command prompt (and hopefully no error messages).
 
+## Security
+
+If you plan to run this anything other than locally, you'll need to change the default passwords. A script to do so is included. Type `vagrant ssh` at the prompt. Switch to a more secure set of default passwords by typing `bash /vagrant/FreshInstallationScript/fix_passwords.sh`. This will guide you through changing the user password, the root MySQL password, and the two user MySQL passwords.
 
 # Testing
 
-1. Open your web browser and visit `http://localhost:8007`. You should see a bar graph giving the names of the authors of the Federalist papers: type "upon" into the box and see if the bars move.
+1. Open your web browser and visit `http://localhost:8007/D3`. You should see a bar graph giving the names of the authors of the Federalist papers: type "upon" into the box and see if the bars move.
 1. Open your web browser and visit `http://localhost:8787`. You should see an RStudio login screen. Enter username `vagrant` and password `vagrant` and log in. You should now see a three-paned RStudio window.
-1. Enter `vagrant halt` and press Return.
+
 
 # Starting and stopping the virtual machine
 
