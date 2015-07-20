@@ -14,7 +14,7 @@ else
 fi;
 
 # Update MySQL passwords.
-python $mydir/fix_config.py
+sudo python $mydir/fix_config.py
 
 # Switch back to the original directory.
 popd;
