@@ -69,21 +69,14 @@ def change_root_password_if_necessary():
     The root password should not be "root". So we change it if it is.
     """
     try:
-        db = MySQLdb.connect(user="root",password="root")
+        db = MySQLdb.connect(user="root",passwd="root",host="localhost")
     except:
+        print "Root password is already changed, not resetting it"
         return
 
-    cur = db.cursor()
-    user = "root"
-    confirmation = 1
-    new_password = 0
-
-    while not confirmation == new_password:
-        new_password = raw_input("Please enter a new password for user " + user + ": ")
-        confirmation = raw_input("Please re-enter the new password for " + user + ": ")
-
-    cur.execute("SET PASSWORD FOR '%s'@'localhost'=PASSWORD('%s')" % (user,new_password))
-    db.close()
+    root = Configfile("/root/.my.cnf")
+    root.change_client_password()
+    root.write_out()
     
 if __name__=="__main__":
     print "By default, this installs some insecure passwords. Fixing those now..."
