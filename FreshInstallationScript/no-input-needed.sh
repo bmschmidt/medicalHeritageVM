@@ -39,17 +39,25 @@ sudo pip install python-dateutil
 
 # At this point, mysql's root password is just 'root'
 
-keeper="keeper"
-keeperpass=""
-
-reader="reader"
-readerpass=""
-
 mysql -uroot -proot --execute="
 	GRANT ALL PRIVILEGES ON *.* TO '$keeper'@'localhost' IDENTIFIED BY '$keeperpass' WITH GRANT OPTION;
 	GRANT SELECT ON *.* TO '$reader'@'localhost' IDENTIFIED BY '$readerpass';
 "
 
+rootMyCnf="/root/.my.cnf"
+
+if [ -d /root ]; then
+    echo "[client]" >> $rootMyCnf
+    echo "user = root" >> $rootMyCnf
+    echo "password = root" >> $rootMyCnf
+    echo "host = 127.0.0.1" >> $rootMyCnf
+fi
+
+keeper="keeper"
+keeperpass=""
+
+reader="reader"
+readerpass=""
 
 # No longer changing to `~/`, because as root that isn't the user's home directory and this script should be run as root.
 # So now these commands must be run from inside ~, which seems reasonable?
@@ -64,7 +72,8 @@ if [ ! -f $localMyCnf ]; then
 fi
 
 # Give root that information too if we happen to be root; otherwise this won't do anything.
-cp .my.cnf ~/.my.cnf
+
+
 
 
 # The core my.cnf file determines how the web server logs in.
