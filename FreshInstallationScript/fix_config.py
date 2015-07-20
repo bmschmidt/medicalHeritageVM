@@ -104,5 +104,3 @@ if __name__=="__main__":
         user = Configfile(location)
     user.change_client_password()
     user.write_out()
-
-
