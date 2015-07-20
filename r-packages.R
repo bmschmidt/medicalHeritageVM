@@ -17,6 +17,9 @@ packages <- c("devtools",
               "openNLP")
 packages <- setdiff(packages, installed.packages()[, "Package"])
 if (length(packages) != 0){
-#  (install.packages(packages))
+  (install.packages(packages))
 }
-#update.packages(ask=FALSE)
+update.packages(ask=FALSE)
+
+# The unreleased Bookworm API package is previewed here, for now.
+devtools::install_github("bmschmidt/edinburgh")
