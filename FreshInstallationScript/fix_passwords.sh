@@ -19,7 +19,7 @@ sudo python $mydir/fix_config.py
 # Switch back to the original directory.
 popd;
 
-echo "Please change the password: the current password is 'vagrant'. To change again, just type 'passwd'"
+echo "Please change the password: the default password, which you may need, is 'vagrant.'"
 
 # Update system password.
-passwd
+passwd vagrant

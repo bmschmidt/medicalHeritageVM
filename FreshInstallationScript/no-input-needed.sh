@@ -127,7 +127,14 @@ else
     # Manually make the bookworm.cnf file with these passwords.
     echo -e "[client]\ndatabase = federalist\nuser = $reader\npassword = $readerpass\n" > federalist/bookworm.cnf
     make;
+    dir=$(pwd)
     popd;
+    # Set the server to refresh tables on reboot; waiting sixty seconds is really stupid, but gives MySQL a chance to warm up and
+    # mucking with the MySQL init.d files seems like a nightmare.
+    echo "@reboot root          cd /home/vagrant/federalist/federalist/ && sleep 60 && python OneClick.py reloadAllMemory" >> /etc/cron.d/bookworm
 fi;
+
+
+
 
 echo "This machine has been set up as a Bookworm server. Confirm that it works by checking the website at http://localhost:8007/D3 to see if you get a bargraph."
