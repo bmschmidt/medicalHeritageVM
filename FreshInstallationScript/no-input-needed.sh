@@ -93,13 +93,6 @@ fi
 # Set up the API and webserver
 
 # Clone the API if not exists, else pull;
-if [ -d /usr/lib/cgi-bin/bookworm ]; then
-    pushd /usr/lib/cgi-bin
-    git pull
-    popd;
-else
-    git clone http://github.com/Bookworm-Project/BookwormAPI /usr/lib/cgi-bin/;
-fi;
 
 # Clone the global d3 bindings if not exist in /var/www/html/
 if [ -d /var/www/html/D3 ]; then
@@ -111,30 +104,46 @@ else
 fi;
 
 # Enable CGI scripts for apache.
+
+# Install bookworm
+
+if [ ! -d bookwormDB ]; then
+    git clone http://github.com/bookworm-project/bookwormDB;
+    pushd bookwormDB;
+    if [ ! -f setup.py ]; then
+	# Temporary cover for the old branch being on top.
+	git checkout module
+    fi
+    python setup.py install
+    popd;
+else
+    # Grab the latest changes.
+    cd bookwormDB
+    git pull
+    python setup.py install
+fi
+
 sudo a2enmod cgi
 sudo service apache2 restart
 
-# create a test bookworm
 
+# Create a test installation.
 if [ -d federalist ]; then
-    pushd federalist/federalist;
-    python OneClick.py reloadMemory;
-    popd;
+    echo "federalist already exists"
 else
     git clone http://github.com/bmschmidt/federalist;
     pushd federalist;
-    make federalist;
+    git checkout module;
     # Manually make the bookworm.cnf file with these passwords.
-    echo -e "[client]\ndatabase = federalist\nuser = $reader\npassword = $readerpass\n" > federalist/bookworm.cnf
+    echo -e "[client]\ndatabase = federalist\nuser = $reader\npassword = $readerpass\n" > bookworm.cnf
+    bookworm init;
     make;
-    dir=$(pwd)
-    popd;
-    # Set the server to refresh tables on reboot; waiting sixty seconds is really stupid, but gives MySQL a chance to warm up and
-    # mucking with the MySQL init.d files seems like a nightmare.
-    echo "@reboot root          cd /home/vagrant/federalist/federalist/ && sleep 60 && python OneClick.py reloadAllMemory" >> /etc/cron.d/bookworm
+    popd;    
 fi;
 
-
+# Set the server to refresh tables on reboot; waiting 100 seconds is really stupid, but gives MySQL a chance to warm up and
+# mucking with the MySQL init.d files seems like a nightmare.
+echo "@reboot root          sleep 100 && bookworm reload_memory --all" > /etc/cron.d/bookworm
 
 
 echo "This machine has been set up as a Bookworm server. Confirm that it works by checking the website at http://localhost:8007/D3 to see if you get a bargraph."
