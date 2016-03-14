@@ -3,6 +3,8 @@ include wget
 $rstudioserver = 'rstudio-server-0.99.465-amd64.deb'
 $urlrstudio = 'http://download2.rstudio.org/'
 
+
+
 # Update system for r install
 class update_system {   
     exec { 'apt_update':
@@ -17,7 +19,7 @@ class update_system {
         'upstart', 'psmisc',
         'python', 'g++', 'make','vim', 'whois','mc','libcairo2-dev',
         'default-jdk', 'gdebi-core', 'libcurl4-gnutls-dev',
-        'libxml2-dev']:
+        'libxml2-dev','libopencv-dev','python-opencv', 'ipython','python-scipy']:
         ensure  => present,
     }
     ->
@@ -86,18 +88,13 @@ class install_rstudio_server {
         ensure => file,
         mode => "a=r,u+w"
     }
-    # ->
-    # Create rstudio_users group
-    # group {'rstudio_users':
-    #     ensure => present,
-    # }
-    # ->
-   # Setting password during user creation does not work    
-   # Password is public; this is for local use only
-   # exec { 'serverpass':
-   #      provider => shell,
-   #      command => 'usermod -p `mkpasswd -H md5 litdata` litdata',
-   #   }
+     ->
+    # Setting password during user creation does not work    
+    # Password is public; this is for local use only
+      exec { 'serverpass':
+         provider => shell,
+         command => 'usermod -p `mkpasswd -H md5 litdata` litdata',
+      }
 }
 
 # Make sure that both services are running
@@ -110,9 +107,16 @@ class check_services {
 }
 
 
+class download_sample_data {
+    wget::fetch {"sample_text_data":
+        timeout  => 0,
+        destination => "/vagrant/sample_texts.zip",
+        source  => "http://benschmidt.org/sample_texts.zip",
+    }
+}   
 
 include update_system
 include install_r
 include install_rstudio_server
 include check_services
-
+include download_sample_data
