@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8007
 
   # add dummy to avoid "Could not retrieve fact fqdn"
-  config.vm.hostname = "vagrant.example.com"
+  # config.vm.hostname = "vagrant.example.com"
 
   
   
@@ -80,6 +80,7 @@ Vagrant.configure(2) do |config|
                       :options => [] do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file = "rstudio-server.pp"
+    puppet.manifest_file = "example-data.pp"
     puppet.module_path = "puppet/modules"
 
   end

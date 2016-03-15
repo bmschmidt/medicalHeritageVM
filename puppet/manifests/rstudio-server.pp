@@ -3,8 +3,6 @@ include wget
 $rstudioserver = 'rstudio-server-0.99.465-amd64.deb'
 $urlrstudio = 'http://download2.rstudio.org/'
 
-
-
 # Update system for r install
 class update_system {   
     exec { 'apt_update':
@@ -19,7 +17,8 @@ class update_system {
         'upstart', 'psmisc',
         'python', 'g++', 'make','vim', 'whois','mc','libcairo2-dev',
         'default-jdk', 'gdebi-core', 'libcurl4-gnutls-dev',
-        'libxml2-dev','libopencv-dev','python-opencv', 'ipython','python-scipy']:
+        'libxml2-dev','libopencv-dev','python-opencv', 'ipython','python-scipy',
+	'apache2']:
         ensure  => present,
     }
     ->
@@ -56,6 +55,12 @@ class install_r {
     group { 'rstudio_users':
         ensure   => present,
     }
+    ->
+    user { 'litdata':
+        ensure   => present
+    }
+
+
     ->
     user { 'vagrant':
         # for R package installs, need:
@@ -107,16 +112,9 @@ class check_services {
 }
 
 
-class download_sample_data {
-    wget::fetch {"sample_text_data":
-        timeout  => 0,
-        destination => "/vagrant/sample_texts.zip",
-        source  => "http://benschmidt.org/sample_texts.zip",
-    }
-}   
 
 include update_system
 include install_r
 include install_rstudio_server
-include check_services
-include download_sample_data
+#include check_services
+

@@ -7,3 +7,6 @@ srv
 shiny-server
 
 /precise/*.box
+images/xray.zip
+images/jpeg
+texts/data/*

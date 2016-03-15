@@ -18,7 +18,7 @@ sudo apt-get install -y parallel
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get install -y mysql-server-5.6 mysql-client-5.6
-sudo apt-get install -y apache2 apache2-bin apache2-data apache2-mpm-prefork libapache2-mod-php5 libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap php5-cli php5-common php5-json php5-mysql php5-readline ssl-cert
+sudo apt-get install -y apache2
 
 sudo apt-get install -y git
 
@@ -110,10 +110,6 @@ fi;
 if [ ! -d bookwormDB ]; then
     git clone http://github.com/bookworm-project/bookwormDB;
     pushd bookwormDB;
-    if [ ! -f setup.py ]; then
-	# Temporary cover for the old branch being on top.
-	git checkout module
-    fi
     python setup.py install
     popd;
 else
@@ -133,7 +129,7 @@ if [ -d federalist ]; then
 else
     git clone http://github.com/bmschmidt/federalist;
     pushd federalist;
-    git checkout module;
+
     # Manually make the bookworm.cnf file with these passwords.
     echo -e "[client]\ndatabase = federalist\nuser = $reader\npassword = $readerpass\n" > bookworm.cnf
     bookworm init;
