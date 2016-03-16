@@ -13,7 +13,7 @@ Requirements: this is meant to run on almost any system. However, you will need 
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads).
 2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-3. Download [this repository as a zip archive](https://github.com/bschmidt/medicalHeritageVM/archive/master.zip) and unzip it. Note the folder you unzip it into.
+3. Download [this repository as a zip archive](https://github.com/bmschmidt/medicalHeritageVM/archive/master.zip) and unzip it. Note the folder you unzip it into.
 4. Open a terminal (Windows calls this a "Command Window") and change to the folder from the last step. (Use the `cd` command.) If you downloaded it to your "downloads" folder, for example, you would type `cd /Home/$username/Downloads/litdata-vagrant-master.zip`, replacing `$username` with your own username on the system. You're in the right place if, when you enter `ls` and press Return, you see `Vagrantfile` among those listed.
 5. Enter the command: `vagrant box add ubuntu/wily64` and press Return. 
 6. Enter the command: `vagrant up` and press Return. Now begins a long process of downloading and installing software. This will require a large amount of disk space and time to complete. You will know it is finished when you get a new command prompt (and hopefully no error messages). There *will* be a large number of messages printed to your screen in any case.
