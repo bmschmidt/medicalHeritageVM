@@ -10,3 +10,6 @@ shiny-server
 images/xray.zip
 images/jpeg
 texts/data/*
+texts/[Nn]eurasthenia.txt texts/hysteria.txt
+texts/sample_journals texts/sample_texts.zip
+bookwormDB
