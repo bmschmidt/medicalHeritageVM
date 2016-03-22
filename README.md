@@ -11,12 +11,12 @@ Requirements: this is meant to run on almost any system. However, you will need 
 1. Install [Vagrant](https://www.vagrantup.com/downloads).
 2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 3. Download [this repository as a zip archive](https://github.com/bmschmidt/medicalHeritageVM/archive/master.zip) and unzip it.
-4. (Mac) Open the terminal app. This gives you a low-level interface to your system. Type the letters `cd` ("change directory") followed by a space, and then enter the full path of the new folder you just unzipped.
-    4-Maca. The easiest way to do this is grab the folder icon of the unzipped folder with the mouse and drag it into your       terminal window. (See image).
-5-Mac. (Optional) Just to make sure you're in the right place, type `ls`. You should see a number of files, one of which is called "Vagrantfile". If don't but you see a file called "medicalHeritageVM," you're one level too high: go back to step 4 and drag from **inside** the unzipped folder, **not** the folder that contains the zipfile.
-
-4-Windows. Open a command window. Change to the folder you unzipped the archive into.
-5-Windows. How do we double-check?
+4. Here things get a little different between Windows and Mac.^[If you have a different OS, you probably can figure out the equivalent.]
+    a. (Mac) Open the terminal app. This gives you a low-level interface to your system. Type the letters `cd` ("change directory") followed by a space, and then enter the full path of the new folder you just unzipped. The easiest way to do this is grab the folder icon of the unzipped folder with the mouse and drag it into your terminal window. (See image). The result should be something like "`/Users/YOURUSERNAME/Downloads/medicalHeritageVM`"
+    b. (Windows) Open a command window. Change to the folder you unzipped the archive into. **MORE SPECIFIC INSTRUCTIONS???**
+5. 
+    a. (Mac, Optional) Just to make sure you're in the right place, type `ls`. You should see a number of files, one of which is called "Vagrantfile". If don't but you see a file called "medicalHeritageVM," you're one level too high: go back to step 4 and drag from **inside** the unzipped folder, **not** the folder that contains the zipfile.
+    b. (Windows) Double check that you're in the right place.
 
 6. Enter the command: `vagrant box add ubuntu/wily64` and press Return.
 7. Enter the command: `vagrant up` and press Return. N
