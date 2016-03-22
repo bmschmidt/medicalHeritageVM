@@ -6,7 +6,7 @@ This provides a self-contained virtual environment we'll be using for our worksh
 
 # Installation
 
-Requirements: this is meant to run on almost any system. However, you will need a substantial amount of RAM (4 GB) and disk space (5 GB). Installation will take a couple hours: it's probably easiest to do this before you go to bed, and leave it running overnight.^[Or whenever it is you sleep.]
+Requirements: this is meant to run on almost any system. However, you will need a substantial amount of RAM (4 GB) and disk space (5 GB). Installation will take a couple hours: it's probably easiest to do this before you go to bed, and leave it running overnight.
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads).
 2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
