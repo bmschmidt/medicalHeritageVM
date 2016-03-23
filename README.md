@@ -13,6 +13,7 @@ Requirements: this is meant to run on almost any system. However, you will need 
 3. Download [this repository as a zip archive](https://github.com/bmschmidt/medicalHeritageVM/archive/master.zip) and unzip it.
 4. Here things get a little different between Windows and Mac.
     * (Mac) Open the Terminal application. This is located inside your Utilities folder, or you can just search for "Terminal" using the Spotlight application on your Mac. The terminal gives you a low-level interface to your system. Type the letters `cd` ("change directory") followed by a space, and then enter the full path of the new folder you just unzipped. The easiest way to do this is grab the folder icon of the unzipped folder with the mouse from the window bar, and drag it into your terminal window. ![Dragging a folder into a terminal window.](docs/Dragging-Mac.png)
+    
     The result should be something like "`/Users/YOURUSERNAME/Downloads/medicalHeritageVM`"
     * (Windows) Open a command window. Change to the folder you unzipped the archive into. **MORE SPECIFIC INSTRUCTIONS???**
 5. 
