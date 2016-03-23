@@ -1,0 +1,13 @@
+[Unit]
+Description=IPython notebook
+
+[Service]
+Type=simple
+PIDFile=/var/run/ipython-notebook.pid
+ExecStart=/usr/bin/ipython notebook --no-browser --pylab=inline --profile nbserver --ip=0.0.0.0
+User=vagrant
+Group=vagrant
+WorkingDirectory=/home/vagrant
+
+[Install]
+WantedBy=multi-user.target

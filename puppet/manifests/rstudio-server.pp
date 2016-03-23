@@ -3,6 +3,17 @@ include wget
 $rstudioserver = 'rstudio-server-0.99.893-amd64.deb'
 $urlrstudio = 'http://download2.rstudio.org/'
 
+class install_opencv {
+  package {[
+    'libopencv-dev',
+    'python-opencv',
+    'ipython',
+    'python-scipy'
+  ]:
+    ensure => present,
+  }
+}
+
 # Update system for r install
 class update_system {
   exec { 'apt_update':
@@ -17,9 +28,7 @@ class update_system {
     'upstart', 'psmisc',
     'python', 'g++', 'whois','mc','libcairo2-dev',
     'default-jdk', 'gdebi-core', 'libcurl4-gnutls-dev',
-    'libxml2-dev','libopencv-dev',
-    'python-opencv', 'ipython','python-scipy',
-    'ipython-notebook',
+    'libxml2-dev',
     'apache2']:
       ensure  => present,
   }
@@ -27,7 +36,7 @@ class update_system {
   exec { 'add-cran-repository':
     provider => shell,
     command  =>
-    'add-apt-repository "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/";
+    'add-apt-repository "deb http://cran.rstudio.com/bin/linux/ubuntu wily/";
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9;
   apt-get update;',
   }
@@ -42,6 +51,30 @@ class update_system {
   # (following https://www.virtualbox.org/manual/ch04.html
   # this must be done after upgrading.
   package { 'dkms':
+    ensure => present,
+  }
+}
+
+class install_ipython_notebook {
+  package {[
+    'ipython-notebook']:
+      ensure => present
+  }
+  ->
+  # or you can assign them to a variable and use them in the resource
+  file { '/usr/lib/systemd/system':
+    ensure => 'directory',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
+  ->
+  file { "/usr/lib/systemd/system/ipython-notebook.service":
+    owner => root,
+    group => root,
+    mode => 555,
+    source => "puppet:///modules/ipython/ipython-notebook.service",
+    #source => "puppet:///modules/wget/README.md",
     ensure => present,
   }
 }
@@ -107,18 +140,15 @@ class install_rstudio_server {
 class check_services {
 #  service {'rstudio-server':
 #    ensure    => running,
-#    require   => [Exec['rstudio-server-install']],
-#    hasstatus => true,
 #  }
   service {'ipython-notebook':
     ensure    => running,
-    binary     => "/usr/local/bin/ipython notebook --profile nbserver --pylab inline --ip=0.0.0.0",
-#    pattern   => "/usr/local/bin/ipython",
-#    stop      => "ps aux | grep ipython | awk '{print $2}' | xargs kill -15"
   }
 }
 
 include update_system
+include install_opencv
 include install_r
 include install_rstudio_server
-include check_services
+include install_ipython_notebook
+#include check_services
