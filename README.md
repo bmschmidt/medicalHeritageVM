@@ -22,9 +22,9 @@ Requirements: this is meant to run on almost any system. However, you will need 
 6. Enter the command: `vagrant box add ubuntu/wily64` and press Return.
 7. Enter the command: `vagrant up` and press Return.
 8. Go to bed, or out for a leisurely dinner, or something. Now begins a long process of downloading and installing software. This will require a large amount of disk space and time to complete. You will know it is finished when you get a new command prompt (and hopefully no error messages). There *will* be a large number of messages printed to your screen in any case. Just ignore them.
-9. Make sure you have the necessary files. In that same unzipped folder, there should be folders called "texts" and "images". Open each of them, and make sure that
-      a. There's a folder in "images" called "jpeg" that has a bunch of journal pages in it
-      b. There's a folder in "texts" called sample_data that has two folders with the full runs of a few medical journals.
+9. Make sure you have the necessary files. In that same unzipped folder, there should be two folders, one called "texts" and one called "images". Open each of them, and make sure that
+      a.) There's a folder in "images" called "jpeg" that has a bunch of journal pages in it
+      b.) There's a folder in "texts" called sample_data that has two folders with the full runs of a few medical journals.
 
 
 # More details
