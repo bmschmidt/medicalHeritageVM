@@ -26,6 +26,7 @@ Vagrant.configure(2) do |config|
   # RStudio
   config.vm.network "forwarded_port", guest: 8787, host: 8787
   config.vm.network "forwarded_port", guest: 80, host: 8007
+  config.vm.network "forwarded_port", guest: 8888, host: 8888
 
   # add dummy to avoid "Could not retrieve fact fqdn"
   # config.vm.hostname = "vagrant.example.com"
@@ -49,10 +50,6 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "texts", "/texts"
   config.vm.synced_folder "images", "/images"
 
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
   # config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
@@ -60,29 +57,16 @@ Vagrant.configure(2) do |config|
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
   # end
-  #
-  # View the documentation for the provider you are using for more
-  # information on available options.
-
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
 
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: "sudo apt-get update; sudo apt-get install -y python-opencv ipython python-scipy"
- 
   config.vm.provision :puppet,
                       #    :options => ["--verbose", "--debug"] do |puppet|
                       #    :options => ["--debug"] do |puppet|
                       :options => [] do |puppet|
     puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file = "rstudio-server.pp"
-    puppet.manifest_file = "example-data.pp"
+    puppet.manifest_file = "/"
     puppet.module_path = "puppet/modules"
 
   end

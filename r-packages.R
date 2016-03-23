@@ -23,3 +23,5 @@ update.packages(ask=FALSE)
 
 # The unreleased Bookworm API package is previewed here, for now.
 devtools::install_github("bmschmidt/edinburgh")
+# And so is my word2vec package.
+devtools::install_github("bmschmidt/wordVectors")

@@ -13,3 +13,5 @@ texts/data/*
 texts/[Nn]eurasthenia.txt texts/hysteria.txt
 texts/sample_journals texts/sample_texts.zip
 bookwormDB
+.DS_Store
+texts/sample_journals texts/sample_journals.zip

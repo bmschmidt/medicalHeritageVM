@@ -9,9 +9,8 @@ class sample_text_data {
     ->
       exec { 'unzip texts':
       cwd         => '/texts',
-      command     => '/usr/bin/unzip sample_journals.zip',
+      command     => '/usr/bin/unzip -n sample_journals.zip',
       user        => 'root',
-      refreshonly => true,
     }
 }
 
@@ -24,9 +23,8 @@ class sample_image_data {
      ->
       exec { 'unzip images':
       cwd         => '/images',
-      command     => '/usr/bin/unzip xray.zip',
+      command     => '/usr/bin/unzip -n xray.zip',
       user        => 'root',
-      refreshonly => true,
       }	      
 }
 
