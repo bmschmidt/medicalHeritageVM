@@ -8,7 +8,7 @@ This provides a self-contained virtual environment we'll be using for our worksh
 
 Requirements: this is meant to run on almost any system. However, you will need a substantial amount of RAM (4 GB) and disk space (5 GB). Installation will take a couple hours: it's probably easiest to do this before you go to bed, and leave it running overnight.
 
-1. Install [Vagrant](https://www.vagrantup.com/downloads).
+1. Install [Vagrant](https://www.vagrantup.com/).
 2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 3. Download [this repository as a zip archive](https://github.com/bmschmidt/medicalHeritageVM/archive/master.zip) and unzip it.
 4. Here things get a little different between Windows and Mac.
