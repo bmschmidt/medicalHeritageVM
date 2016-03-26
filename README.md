@@ -1,6 +1,6 @@
 
 
-This provides a self-contained virtual environment we'll be using for our workshops.
+This provides a self-contained virtual environment we'll be using for our workshops. If you'd like more detailed installation instructions, you can find them [here](https://www.dropbox.com/s/i26osig4b3x5cre/Set%20up%20the%20Medical%20Heritage%20Virtual%20Machine.pdf?dl=0).
 
 
 
@@ -14,7 +14,7 @@ Requirements: this is meant to run on almost any system. However, you will need 
 4. Here things get a little different between Windows and Mac.
     * (Mac) Open the Terminal application. This is located inside your Utilities folder, or you can just search for "Terminal" using the Spotlight application on your Mac. The terminal gives you a low-level interface to your system. Type the letters `cd` ("change directory") followed by a space, and then enter the full path of the new folder you just unzipped. The easiest way to do this is grab the folder icon of the unzipped folder with the mouse from the window bar, and drag it into your terminal window. ![Dragging a folder into a terminal window.](docs/Dragging-Mac.png)
     
-    The result should be something like "`/Users/YOURUSERNAME/Downloads/medicalHeritageVM`"
+    The result should be something like `/Users/YOURUSERNAME/Downloads/medicalHeritageVM`
     * (Windows) Open the command prompt. (You can find this by searching for it from your computer's "Start" menu.) Use the "CD" ("change directory") command to navigate to the folder where you unzipped the archive.
 5. 
     * (Mac, Optional) Just to make sure you're in the right place, type `ls`. You should see the names of a number of files, one of which is called "Vagrantfile". If don't but you see a file called "medicalHeritageVM," you're one level too high: go back to step 4 and drag from **inside** the unzipped folder, **not** the folder that contains the zipfile.![Your terminal should look something like this](docs/cd_output.png)
