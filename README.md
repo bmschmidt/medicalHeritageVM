@@ -76,7 +76,7 @@ you can just search for it using your Mac's Spotlight search tool.
 
 In the image you see here, your terminal is waiting for you to give it instructions. You can tell it's waiting for you to tell it what to do because of the dollar sign (**$**) after the username.
 
-On PCs, the terminal is called the **command prompt**. For most versions of Windows, you can access the command prompt by clicking on the **Start** menu and entering **command* in the **Search** box. [Here's how to get to the command prompt in Windows 10.](http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)
+On PCs, the terminal is called the **command prompt**. For most versions of Windows, you can access the command prompt by clicking on the **Start** menu and entering **command** in the **Search** box. [Here's how to get to the command prompt in Windows 10.](http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)
 
 ![](docs/ssimage4.png)
 <span id="Step3" class="anchor"></span>
