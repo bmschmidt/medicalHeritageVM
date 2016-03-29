@@ -18,7 +18,7 @@ In order to install this software, you'll need:
 * a stable Internet connection. If your Internet connection gets interrupted, it could cause some hiccups with the installation process. So it's best if you can count on a stable Internet connection for at least a few hours.
 * some time. Depending on various factors, this process could take anywhere from 45 minutes to a few hours.'
 
-1. Install Vagrant {#install-vagrant .StepHeading}
+1. Install Vagrant
 ------------------
 
 Vagrant is the software we'll use to set up the virtual machine. You can
@@ -29,10 +29,10 @@ software by double-clicking the package you downloaded, double-clicking
 Vagrant.pkg, and following the steps in the Vagrant Installer that
 launches.
 
-![](docs/ssimage1.png){width="6.0in"
-height="4.696629483814523in"}<span id="Step11" class="anchor"></span>
+![](docs/ssimage1.png)
+<span id="Step11" class="anchor"></span>
 
-2. Install VirtualBox {#install-virtualbox .StepHeading}
+2. Install VirtualBox
 ---------------------
 
 VirtualBox is the second piece of software you'll use to set up your
@@ -43,10 +43,10 @@ by double-clicking the package you downloaded, double-clicking
 VirtualBox.pkg, and following the steps in the VirtualBox Installer that
 launches.
 
-![](docs/ssimage2.png){width="6.0in"
-height="3.991246719160105in"}<span id="Step1" class="anchor"></span>
+![](docs/ssimage2.png)
+<span id="Step1" class="anchor"></span>
 
-3. Download the zipped folder containing the setup instructions {#download-the-zipped-folder-containing-the-setup-instructions .StepHeading}
+3. Download the zipped folder containing the setup instructions
 ---------------------------------------------------------------
 
 Go to <https://github.com/bmschmidt/medicalHeritageVM> and click on the
@@ -59,10 +59,10 @@ Make a note of where you saved the folder, which is called
 Downloads folder by default. That's OK, but I'm going to drag the folder
 to my **Desktop**, just to make it a little easier to find.
 
-![](docs/ssimage3.png){width="6.0in"
-height="3.9396412948381454in"}<span id="Step2" class="anchor"></span>
+![](docs/ssimage3.png)
+<span id="Step2" class="anchor"></span>
 
-4. Open your Terminal {#open-your-terminal .StepHeading}
+4. Open your Terminal
 ---------------------
 
 **Terminal** is an application on your Mac that allows you to interact
@@ -75,10 +75,10 @@ prompt**, meaning it's waiting for you to give it instructions. You can
 tell it's a command prompt because of the dollar sign (**\$**) after the
 username.
 
-![](docs/ssimage4.png){width="6.0in"
-height="3.8652854330708664in"}<span id="Step3" class="anchor"></span>
+![](docs/ssimage4.png)
+<span id="Step3" class="anchor"></span>
 
-5. Navigate to the folder you downloaded in step three {#navigate-to-the-folder-you-downloaded-in-step-three .StepHeading}
+5. Navigate to the folder you downloaded in step three 
 ------------------------------------------------------
 
 This is the hardest thing you'll do in this installation process! We
@@ -91,10 +91,10 @@ remember where you saved the folder you downloaded in Step Three. (As
 you'll recall, the folder is called **medicalHeritageVM-master**.) Drag
 the icon for that folder into the terminal and drop it there.
 
-![](docs/ssimage5.png){width="6.0in"
-height="3.937823709536308in"}<span id="Step4" class="anchor"></span>
+![](docs/ssimage5.png)
+<span id="Step4" class="anchor"></span>
 
-6. This is what your terminal should look like after you drop the folder {#this-is-what-your-terminal-should-look-like-after-you-drop-the-folder .StepHeading}
+6. This is what your terminal should look like after you drop the folder 
 ------------------------------------------------------------------------
 
 As you can see, your **Terminal** has helpfully supplied the **path** to
@@ -102,10 +102,10 @@ the folder you just dopped into it. (A **path** works like a URL; it
 tells the computer where to go.) If your terminal looks something like
 mine, go ahead and press **return**. You've completed the hardest part!
 
-![](docs/ssimage6.png){width="5.53125in"
-height="1.3229166666666667in"}<span id="Step5" class="anchor"></span>
+![](docs/ssimage6.png)
+<span id="Step5" class="anchor"></span>
 
-7. Check to see what's in the folder {#check-to-see-whats-in-the-folder .StepHeading}
+7. Check to see what's in the folder
 ------------------------------------
 
 After you've pressed return, notice that the command prompt changes a
@@ -115,10 +115,10 @@ folder. Let's see what's inside the folder. To do that enter the letters
 whatever folder you're in.) You should see a list of files that looks
 like the list pictured in the image below.
 
-![](docs/ssimage7.png){width="5.385416666666667in"
-height="1.6875in"}<span id="Step7" class="anchor"></span>
+![](docs/ssimage7.png)
+<span id="Step7" class="anchor"></span>
 
-8. Tell Vagrant to download our computing environment {#tell-vagrant-to-download-our-computing-environment .StepHeading}
+8. Tell Vagrant to download our computing environment
 -----------------------------------------------------
 
 Now that we've downloaded the right software and made our way into the
@@ -141,10 +141,10 @@ you're typing them and impress onlookers by looking like a hacker.
 When this process is complete, you'll see the command prompt again (your
 name followed by the dollar sign).
 
-![](docs/ssimage8.png){width="6.0in"
-height="3.92746062992126in"}<span id="Step8" class="anchor"></span>
+![](docs/ssimage8.png)
+<span id="Step8" class="anchor"></span>
 
-9. Check to make sure Vagrant downloaded everything you need {#check-to-make-sure-vagrant-downloaded-everything-you-need .StepHeading}
+9. Check to make sure Vagrant downloaded everything you need
 ------------------------------------------------------------
 
 Within the medicalheritageVM-master file you downloaded in Step Three,
@@ -158,10 +158,10 @@ which will unzip into a folder called **jpeg**. That folder should
 contain many images of journal pages, which you'll use during Miriam's
 portion of the workshop.
 
-![](docs/ssimage9.png){width="6.0in"
-height="3.408740157480315in"}<span id="Step9" class="anchor"></span>
+![](docs/ssimage9.png)
+<span id="Step9" class="anchor"></span>
 
-10. Put your VM to sleep 'til you need it again {#put-your-vm-to-sleep-til-you-need-it-again .StepHeading}
+10. Put your VM to sleep 'til you need it again
 -----------------------------------------------
 
 From here on out, it'll be much faster to get your virtual machine up
@@ -173,8 +173,8 @@ Terminal.
 Now you're all set! Leave the medicalheritageVM-master folder in place,
 because we'll be using it again during the workshop.
 
-![](docs/ssimage10.png){width="4.677083333333333in"
-height="0.8020833333333334in"}
+![](docs/ssimage10.png)
+
 
 
 # More details
