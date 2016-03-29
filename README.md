@@ -4,7 +4,7 @@ How to Set Up This Virtual Machine
 In our workshop at the National Library of Medicine, we'll learn how to
 use special software for mining images and texts. The problem is that
 this software has lots of **dependencies** -- things that need to be
-installed in order for it to work -- and the process for installing of
+installed in order for it to work -- and the process for installing all of
 this stuff is time-consuming and varies across different computers.
 
 To simplify things, Ben and Miriam have set up a **virtual machine**,
@@ -72,7 +72,7 @@ you can just search for it using your Mac's Spotlight search tool.
 
 In the image you see here, your terminal is showing you a **command
 prompt**, meaning it's waiting for you to give it instructions. You can
-tell it's a command prompt because of the dollar sign (**\$**) after the
+tell it's a command prompt because of the dollar sign (**$**) after the
 username.
 
 ![](docs/ssimage4.png)
@@ -85,7 +85,7 @@ This is the hardest thing you'll do in this installation process! We
 need to use the **Terminal** to navigate into the folder you downloaded
 in **Step Three**. Luckily, Macs make this pretty easy to do.
 
-Just after the dollar sign in your terminal, type the letters **cd**
+Just after the dollar sign in your terminal, type the letters `cd`
 followed by a space. ("CD" stands for "change directory.") Then,
 remember where you saved the folder you downloaded in Step Three. (As
 you'll recall, the folder is called **medicalHeritageVM-master**.) Drag
@@ -111,7 +111,7 @@ mine, go ahead and press **return**. You've completed the hardest part!
 After you've pressed return, notice that the command prompt changes a
 little bit to show that you're inside the medicalHeritageVM-master
 folder. Let's see what's inside the folder. To do that enter the letters
-**ls**, followed by **return**. ("LS" means **list files** inside
+`ls`, followed by **return**. ("LS" means **list files** inside
 whatever folder you're in.) You should see a list of files that looks
 like the list pictured in the image below.
 
@@ -128,7 +128,7 @@ everyone's on the same page at the workshop. Luckily, the file you
 downloaded in step three contains instructions for your computer that
 tells it how to get everything set up.
 
-Getting this started is simple: just enter vagrant up and press return.
+Getting this started is simple: just enter `vagrant up` and press return.
 Then it will take a long time for everything to download. You'll
 probably want to let this run and come back to it later. The process can
 take anywhere from half an hour to three hours.
@@ -165,9 +165,9 @@ portion of the workshop.
 -----------------------------------------------
 
 From here on out, it'll be much faster to get your virtual machine up
-and running (which you'll do by typing vagrant up) because everything
+and running (which you'll do by typing `vagrant up`) because everything
 you need is already downloaded. Let's put our virtual machine to sleep
-for now, to save memory. To do that, type vagrant halt into your
+for now, to save memory. To do that, type `vagrant halt` into your
 Terminal.
 
 Now you're all set! Leave the medicalheritageVM-master folder in place,
