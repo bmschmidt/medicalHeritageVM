@@ -29,6 +29,8 @@ software by double-clicking the package you downloaded, double-clicking
 Vagrant.pkg, and following the steps in the Vagrant Installer that
 launches.
 
+If you're on a PC, download the version for Windows and install the software as you normally do.
+
 ![](docs/ssimage1.png)
 <span id="Step11" class="anchor"></span>
 
@@ -43,6 +45,8 @@ by double-clicking the package you downloaded, double-clicking
 VirtualBox.pkg, and following the steps in the VirtualBox Installer that
 launches.
 
+If you're on a PC, download the version for Windows and install the software as you normally do.
+
 ![](docs/ssimage2.png)
 <span id="Step1" class="anchor"></span>
 
@@ -55,7 +59,7 @@ instructions for the virtual machine we're using. Unzip the folder after
 you've downloaded it.
 
 Make a note of where you saved the folder, which is called
-**medicalHeritageVM-master**. On most Macs, things get saved to the
+**medicalHeritageVM-master**. On most computers, things get saved to the
 Downloads folder by default. That's OK, but I'm going to drag the folder
 to my **Desktop**, just to make it a little easier to find.
 
@@ -70,10 +74,9 @@ with your computer using written commands. It lives inside your
 **Utilities** folder (inside **Applications**), or, to simplify things,
 you can just search for it using your Mac's Spotlight search tool.
 
-In the image you see here, your terminal is showing you a **command
-prompt**, meaning it's waiting for you to give it instructions. You can
-tell it's a command prompt because of the dollar sign (**$**) after the
-username.
+In the image you see here, your terminal is waiting for you to give it instructions. You can tell it's waiting for you to tell it what to do because of the dollar sign (**$**) after the username.
+
+On PCs, the terminal is called the **command prompt**. For most versions of Windows, you can access the command prompt by clicking on the **Start** menu and entering **command* in the **Search** box. [Here's how to get to the command prompt in Windows 10.](http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)
 
 ![](docs/ssimage4.png)
 <span id="Step3" class="anchor"></span>
