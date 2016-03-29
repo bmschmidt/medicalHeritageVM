@@ -1,4 +1,4 @@
-Set up the Medical Heritage Virtual Machine {#set-up-the-medical-heritage-virtual-machine-mac .ArticleHeading}
+How to Set Up This Virtual Machine
 =================================================
 
 In our workshop at the National Library of Medicine, we'll learn how to
