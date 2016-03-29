@@ -16,7 +16,7 @@ then download the VM itself.<span id="Step10" class="anchor"></span>
 In order to install this software, you'll need:
 * a fair amount of space on your computer (about 5GB) and a fair amount of RAM (about 4GB). [Find out how much RAM your Mac has.](http://www.macinstruct.com/node/422) [Find out how much RAM your PC has.](http://windows.microsoft.com/en-us/windows/how-much-computer-ram#1TC=windows-7) [Find out how much disk space your Mac has.](http://www.macinstruct.com/node/414) [Find out how much disk space your PC has.](http://windows.microsoft.com/en-us/windows-vista/view-the-amount-of-free-space-on-your-hard-disk)
 * a stable Internet connection. If your Internet connection gets interrupted, it could cause some hiccups with the installation process. So it's best if you can count on a stable Internet connection for at least a few hours.
-* some time. Depending on various factors, this process could take anywhere from 45 minutes to a few hours.'
+* some time. Depending on various factors, this process could take anywhere from 45 minutes to a few hours.
 
 1. Install Vagrant
 ------------------
