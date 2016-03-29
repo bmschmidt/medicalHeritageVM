@@ -14,7 +14,7 @@ computer, you'll first download some necessary software and files, and
 then download the VM itself.<span id="Step10" class="anchor"></span>
 
 In order to install this software, you'll need:
-* a fair amount of space on your computer (about 5GB) and a fair amount of RAM (about 4GB). [Find out how much RAM your Mac has.](http://www.macinstruct.com/node/422) [Find out how much RAM your PC has.](http://windows.microsoft.com/en-us/windows/how-much-computer-ram#1TC=windows-7) [Find out how much disk space your Mac has.](http://www.macinstruct.com/node/414) [Find out how much disk space your PC has.](http://windows.microsoft.com/en-us/windows-vista/view-the-amount-of-free-space-on-your-hard-disk)
+* a fair amount of space on your computer (about 5GB) and a fair amount of RAM (about 4GB). [Find out how much RAM your computer has: [Mac](http://www.macinstruct.com/node/422) | [PC](http://windows.microsoft.com/en-us/windows/how-much-computer-ram#1TC=windows-7). Find out how much disk space your computer has: [Mac](http://www.macinstruct.com/node/414)  | [PC](http://windows.microsoft.com/en-us/windows-vista/view-the-amount-of-free-space-on-your-hard-disk). If your computer doesn't have enough space or RAM, and you can't borrow one that does, you'll need to let the workshop organizers know.
 * a stable Internet connection. If your Internet connection gets interrupted, it could cause some hiccups with the installation process. So it's best if you can count on a stable Internet connection for at least a few hours.
 * some time. Depending on various factors, this process could take anywhere from 45 minutes to a few hours.
 
@@ -59,7 +59,7 @@ instructions for the virtual machine we're using. Unzip the folder after
 you've downloaded it.
 
 Make a note of where you saved the folder, which is called
-**medicalHeritageVM-master**. On most computers, things get saved to the
+**medicalHeritageVM-master**. On many computers, things get saved to the
 Downloads folder by default. That's OK, but I'm going to drag the folder
 to my **Desktop**, just to make it a little easier to find.
 
@@ -86,16 +86,19 @@ On PCs, the terminal is called the **command prompt**. For most versions of Wind
 
 This is the hardest thing you'll do in this installation process! We
 need to use the **Terminal** to navigate into the folder you downloaded
-in **Step Three**. Luckily, Macs make this pretty easy to do.
+in **Step Three**. 
 
-Just after the dollar sign in your terminal, type the letters `cd`
-followed by a space. ("CD" stands for "change directory.") Then,
+Luckily, Macs make this pretty easy to do. Just after the dollar sign in your terminal, type the letters `cd` followed by a space. ("CD" stands for "change directory.") Then,
 remember where you saved the folder you downloaded in Step Three. (As
 you'll recall, the folder is called **medicalHeritageVM-master**.) Drag
 the icon for that folder into the terminal and drop it there.
 
 ![](docs/ssimage5.png)
 <span id="Step4" class="anchor"></span>
+
+Windows computers don't allow you to do the cool folder-dragging trick, so we have to navigate into the medicalHeritageVM-master folder the old-fashioned way. If you think about your files on your computer, they form a sort of upside-down tree: the root is the C: drive, and the branches extend all the way through multiple folders into all the individual documents you have on your computer. 
+
+To move one level up the tree (toward its root) on the command line, type `..`. To move down the tree, type `cd` (which stands for "change directory"), followed by the name of the folder you want to move into. (Tip: If you type the first few letters of the folder, followed by the tab key, the command prompt can auto-complete the name of the folder.) Using these two commands, navigate through your files until you're just inside the medicalHeritageVM-master folder. You can tell you're in the right place if, when you type `dir` (which means "show me what's in this directory), you can see the files shown in the image in Step Seven. Once you see those files, you can skip to Step Eight.
 
 6. This is what your terminal should look like after you drop the folder 
 ------------------------------------------------------------------------
@@ -173,8 +176,7 @@ you need is already downloaded. Let's put our virtual machine to sleep
 for now, to save memory. To do that, type `vagrant halt` into your
 Terminal.
 
-Now you're all set! Leave the medicalheritageVM-master folder in place,
-because we'll be using it again during the workshop.
+Now you're all set! Leave the medicalheritageVM-master folder where it is on your computer, because we'll be using it again during the workshop.
 
 ![](docs/ssimage10.png)
 
