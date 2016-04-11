@@ -1,0 +1,48 @@
+library(bookworm)
+library(ggplot2)
+
+result = bookworm(
+  host="mhlbookworm.ngrok.io",
+  database="MHL_Bookworm",
+  groups=list("year_year"),
+  search_limits=list("word"=list("cholera")),
+  counttype = list("WordsPerMillion"))
+
+
+ggplot(result) + aes(x=year_year,y=WordsPerMillion) + geom_line() +  geom_smooth() + xlim(1500,2000)
+
+
+
+result = bookworm(
+  host="mhlbookworm.ngrok.io",
+  database="MHL_Bookworm",
+  groups=list("library"),
+  counttype = list("TextCount")
+  )
+
+
+ggplot(result) + aes(y=TextCount,x=reorder(library,TextCount)) + 
+  geom_bar(stat="identity") + coord_flip()
+
+
+
+
+result = bookworm(
+  host="localhost",
+  database="federalist",
+  groups=list("unigram","author"),
+  counttype = list("WordCount","TextCount")
+)
+
+library(tidyr)
+odds_ratio = result %>% filter(author %in% c("HAMILTON","MADISON")) %>% 
+  group_by(author) %>%
+  mutate(p=WordCount/sum(WordCount)) %>%
+  ungroup %>%
+  select(unigram,author,p) %>% 
+  spread(author,p,fill=0) %>% 
+  mutate(odds_ratio=MADISON*(1-HAMILTON)/(HAMILTON*(1-MADISON)))
+
+(odds_ratio) %>% filter(HAMILTON>0.0001) %>% arrange(-odds_ratio) %>% head
+
+
