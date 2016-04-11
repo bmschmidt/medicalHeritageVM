@@ -1,30 +1,185 @@
+How to Set Up This Virtual Machine
+=================================================
 
+In our workshop at the National Library of Medicine, we'll learn how to
+use special software for mining images and texts. The problem is that
+this software has lots of **dependencies** -- things that need to be
+installed in order for it to work -- and the process for installing all of
+this stuff is time-consuming and varies across different computers.
 
-This provides a self-contained virtual environment we'll be using for our workshops.
+To simplify things, Ben and Miriam have set up a **virtual machine**,
+meaning a computer you install on *your* computer, that's set up with
+everything you need. In order to install the virtual machine on your
+computer, you'll first download some necessary software and files, and
+then download the VM itself.<span id="Step10" class="anchor"></span>
 
+In order to install this software, you'll need:
+* a fair amount of space on your computer (about 5GB) and a fair amount of RAM (about 4GB). [Find out how much RAM your computer has: [Mac](http://www.macinstruct.com/node/422) | [PC](http://windows.microsoft.com/en-us/windows/how-much-computer-ram#1TC=windows-7). Find out how much disk space your computer has: [Mac](http://www.macinstruct.com/node/414)  | [PC](http://windows.microsoft.com/en-us/windows-vista/view-the-amount-of-free-space-on-your-hard-disk). If your computer doesn't have enough space or RAM, and you can't borrow one that does, you'll need to let the workshop organizers know so they can make other arrangements.
+* a stable Internet connection. If your Internet connection gets interrupted, it could cause some hiccups with the installation process. So it's best if you can count on a stable Internet connection for at least a few hours.
+* some time. Depending on various factors, this process could take anywhere from 45 minutes to a few hours.
 
+1. Install Vagrant
+------------------
 
-# Installation
+Vagrant is the software we'll use to set up the virtual machine. You can
+download it just like you download any piece of software. In your
+browser, go to <https://www.vagrantup.com/downloads.html> and download
+the MacOS version. Once you've finished downloading Vagrant, install the
+software by double-clicking the package you downloaded, double-clicking
+Vagrant.pkg, and following the steps in the Vagrant Installer that
+launches.
 
-Requirements: this is meant to run on almost any system. However, you will need a substantial amount of RAM (4 GB) and disk space (5 GB). Installation will take a couple hours: it's probably easiest to do this before you go to bed, and leave it running overnight.
+If you're on a PC, download the version for Windows and install the software as you normally do.
 
-1. Install [Vagrant](https://www.vagrantup.com/downloads).
-2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-3. Download [this repository as a zip archive](https://github.com/bmschmidt/medicalHeritageVM/archive/master.zip) and unzip it.
-4. Here things get a little different between Windows and Mac.
-    * (Mac) Open the Terminal application. This is located inside your Utilities folder, or you can just search for "Terminal" using the Spotlight application on your Mac. The terminal gives you a low-level interface to your system. Type the letters `cd` ("change directory") followed by a space, and then enter the full path of the new folder you just unzipped. The easiest way to do this is grab the folder icon of the unzipped folder with the mouse from the window bar, and drag it into your terminal window. ![Dragging a folder into a terminal window.](docs/Dragging-Mac.png)
-    
-    The result should be something like "`/Users/YOURUSERNAME/Downloads/medicalHeritageVM`"
-    * (Windows) Open a command window. Change to the folder you unzipped the archive into. **MORE SPECIFIC INSTRUCTIONS???**
-5. 
-    * (Mac, Optional) Just to make sure you're in the right place, type `ls`. You should see the names of a number of files, one of which is called "Vagrantfile". If don't but you see a file called "medicalHeritageVM," you're one level too high: go back to step 4 and drag from **inside** the unzipped folder, **not** the folder that contains the zipfile.![Your terminal should look something like this](docs/cd_output.png)
-    * (Windows) Double check that you're in the right place.
-6. Enter the command: `vagrant box add ubuntu/wily64` and press Return.
-7. Enter the command: `vagrant up` and press Return.
-8. Go to bed, or out for a leisurely dinner, or something. Now begins a long process of downloading and installing software. This will require a large amount of disk space and time to complete. You will know it is finished when you get a new command prompt (and hopefully no error messages). There *will* be a large number of messages printed to your screen in any case. Just ignore them.
-9. Make sure you have the necessary files. In that same unzipped folder, there should be two folders, one called "texts" and one called "images". Open each of them, and make sure that
-      a.) There's a folder in "images" called "jpeg" that has a bunch of journal pages in it
-      b.) There's a folder in "texts" called sample_data that has two folders with the full runs of a few medical journals.
+![](docs/ssimage1.png)
+<span id="Step11" class="anchor"></span>
+
+2. Install VirtualBox
+---------------------
+
+VirtualBox is the second piece of software you'll use to set up your
+virtual machine. Point your browser to
+<https://www.virtualbox.org/wiki/Downloads> and download the version for
+Mac. Once you've finished downloading VirtualBox, install the software
+by double-clicking the package you downloaded, double-clicking
+VirtualBox.pkg, and following the steps in the VirtualBox Installer that
+launches.
+
+If you're on a PC, download the version for Windows and install the software as you normally do.
+
+![](docs/ssimage2.png)
+<span id="Step1" class="anchor"></span>
+
+3. Download the zipped folder containing the setup instructions
+---------------------------------------------------------------
+
+Go to <https://github.com/bmschmidt/medicalHeritageVM> and click on the
+**Download Zip** button to download a zipped version of the setup
+instructions for the virtual machine we're using. Unzip the folder after
+you've downloaded it.
+
+Make a note of where you saved the folder, which is called
+**medicalHeritageVM-master**. On many computers, things get saved to the
+Downloads folder by default. That's OK, but I'm going to drag the folder
+to my **Desktop**, just to make it a little easier to find.
+
+![](docs/ssimage3.png)
+<span id="Step2" class="anchor"></span>
+
+4. Open your Terminal
+---------------------
+
+**Terminal** is an application on your Mac that allows you to interact
+with your computer using written commands. It lives inside your
+**Utilities** folder (inside **Applications**), or, to simplify things,
+you can just search for it using your Mac's Spotlight search tool.
+
+In the image you see here, your terminal is waiting for you to give it instructions. You can tell it's waiting for you to tell it what to do because of the dollar sign (**$**) after the username.
+
+On PCs, the terminal is called the **command prompt**. For most versions of Windows, you can access the command prompt by clicking on the **Start** menu and entering **command** in the **Search** box. [Here's how to get to the command prompt in Windows 10.](http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)
+
+![](docs/ssimage4.png)
+<span id="Step3" class="anchor"></span>
+
+5. Navigate to the folder you downloaded in step three 
+------------------------------------------------------
+
+This is the hardest thing you'll do in this installation process! We
+need to use the **Terminal** to navigate into the folder you downloaded
+in **Step Three**. 
+
+Luckily, Macs make this pretty easy to do. Just after the dollar sign in your terminal, type the letters `cd` followed by a space. ("CD" stands for "change directory.") Then,
+remember where you saved the folder you downloaded in Step Three. (As
+you'll recall, the folder is called **medicalHeritageVM-master**.) Drag
+the icon for that folder into the terminal and drop it there.
+
+![](docs/ssimage5.png)
+<span id="Step4" class="anchor"></span>
+
+Windows computers don't allow you to do the cool folder-dragging trick, so we have to navigate into the medicalHeritageVM-master folder the old-fashioned way. If you think about your files on your computer, they form a sort of upside-down tree: the root is the C: drive, and the branches extend all the way through multiple folders into all the individual documents you have on your computer. 
+
+To move one level up the tree (toward its root) on the command line, type `cd ..` (that's the letters c and d followed by a space and two periods). To move down the tree, type `cd` (which stands for "change directory"), followed by a space and the name of the folder you want to move into. (Tip: If you type the first few letters of the folder, followed by the tab key, the command prompt can auto-complete the name of the folder.) Using these two commands, navigate through your files until you're just inside the medicalHeritageVM-master folder. You can tell you're in the right place if, when you type `dir` (which means "show me what's in this directory), you can see the files shown in the image in Step Seven. Once you see those files, you can skip to **Step Eight**.
+
+6. This is what your terminal should look like after you drop the folder 
+------------------------------------------------------------------------
+
+As you can see, your **Terminal** has helpfully supplied the **path** to
+the folder you just dopped into it. (A **path** works like a URL; it
+tells the computer where to go.) If your terminal looks something like
+mine, go ahead and press **return**. You've completed the hardest part!
+
+![](docs/ssimage6.png)
+<span id="Step5" class="anchor"></span>
+
+7. Check to see what's in the folder
+------------------------------------
+
+After you've pressed return, notice that the command prompt changes a
+little bit to show that you're inside the medicalHeritageVM-master
+folder. Let's see what's inside the folder. To do that enter the letters
+`ls`, followed by **return**. ("LS" means **list files** inside
+whatever folder you're in.) You should see a list of files that looks
+like the list pictured in the image below.
+
+![](docs/ssimage7.png)
+<span id="Step7" class="anchor"></span>
+
+8. Tell Vagrant to download our computing environment
+-----------------------------------------------------
+
+Now that we've downloaded the right software and made our way into the
+right folder, let's download the computing environment -- that is, the
+operating system plus the specific software and files -- we need so that
+everyone's on the same page at the workshop. Luckily, the file you
+downloaded in step three contains instructions for your computer that
+tells it how to get everything set up.
+
+Getting this started is simple: just enter `vagrant up` and press return.
+Then it will take a long time for everything to download. You'll
+probably want to let this run and come back to it later. The process can
+take anywhere from half an hour to three hours.
+
+While this is happening, your terminal screen will fill up with many
+messages. Some of them look alarming and say "Error," but that's OK. You
+shouldn't need to worry about them, but it you want, you can pretend
+you're typing them and impress onlookers by looking like a hacker.
+
+When this process is complete, you'll see the command prompt again (your
+name followed by the dollar sign).
+
+![](docs/ssimage8.png)
+<span id="Step8" class="anchor"></span>
+
+9. Check to make sure Vagrant downloaded everything you need
+------------------------------------------------------------
+
+Within the medicalheritageVM-master file you downloaded in Step Three,
+you'll find an **images** folder and a **texts** folder. Open the
+**texts** folder. You should see a file called **sample\_journals.zip**.
+(In the image below, I've unzipped it.) That contains the journals
+you'll use during Ben's portion of the workshop.
+
+In the **images** folder, you'll see a zipped file called **xray**,
+which will unzip into a folder called **jpeg**. That folder should
+contain many images of journal pages, which you'll use during Miriam's
+portion of the workshop.
+
+![](docs/ssimage9.png)
+<span id="Step9" class="anchor"></span>
+
+10. Put your VM to sleep 'til you need it again
+-----------------------------------------------
+
+From here on out, it'll be much faster to get your virtual machine up
+and running (which you'll do by typing `vagrant up`) because everything
+you need is already downloaded. Let's put our virtual machine to sleep
+for now, to save memory. To do that, type `vagrant halt` into your
+Terminal.
+
+Now you're all set! Leave the medicalheritageVM-master folder where it is on your computer, because we'll be using it again during the workshop.
+
+![](docs/ssimage10.png)
+
 
 
 # More details
