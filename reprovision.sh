@@ -2,6 +2,7 @@
 # Paste this inside your vm
 
 sudo apt-get install python3-pip
+sudo apt-get remove ipython
 
 pip3 install internetarchive
 pip install internetarchive
@@ -11,6 +12,8 @@ pip3 install jupyter
 
 python3 -m ipykernel install --user
 
+python2 -m pip install ipykernel
+python2 -m ipykernel install --user
 
 wget -nc -O /texts/MedicalHeritage.ipynb https://raw.githubusercontent.com/heidiknoblauch/medicalheritagelibrary/master/MedicalHeritage.ipynb
 
