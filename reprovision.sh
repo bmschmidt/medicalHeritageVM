@@ -22,5 +22,7 @@ echo '/home/vagrant/.local/bin/jupyter notebook --no-browser --ip=0.0.0.0 --note
 sudo chmod 777 jupyter
 sudo mv jupyter /usr/local/bin
 
+
+jupyter
 # NOW go to localhost:8888 on your web browser
 
