@@ -1,12 +1,20 @@
-#!/bin/bash
-
 
 # Paste this inside your vm
 
-wget -nc heidis-notebook.ipynb
+sudo apt-get install python3-pip
+
+pip3 install internetarchive
 pip install internetarchive
 
-mv heidis-notebook.ipynb /texts/
-sudo service ipython-notebook start
+pip install jupyter
+pip3 install jupyter
+
+wget -nc -O /texts/MedicalHeritage.ipynb https://raw.githubusercontent.com/heidiknoblauch/medicalheritagelibrary/master/MedicalHeritage.ipynb
+
+echo '#!/bin/bash' > jupyter
+echo '/home/vagrant/.local/bin/jupyter notebook --no-browser --ip=0.0.0.0 --notebook-dir /texts' > jupyter
+sudo chmod 777 jupyter
+sudo mv jupyter /usr/local/bin
 
 # NOW go to localhost:8888 on your web browser
+
